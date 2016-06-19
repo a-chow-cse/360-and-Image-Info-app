@@ -1,35 +1,19 @@
 package com.actsj13production.imagepicker;
 
-import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
-import android.graphics.Point;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.media.ExifInterface;
-import android.media.Image;
-import android.net.Uri;
+import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.Display;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.appindexing.Action;
-import com.google.android.gms.appindexing.AppIndex;
-import com.google.android.gms.common.api.GoogleApiClient;
-
-import org.w3c.dom.Text;
-
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -105,7 +89,6 @@ public class FindingMetaDataActivity extends AppCompatActivity implements View.O
         int width = Integer.parseInt(exif.getAttribute(ExifInterface.TAG_IMAGE_WIDTH));
         if (length != width * 2)
         {
-            Toast.makeText(this,"What the!",Toast.LENGTH_SHORT).show();
             Toast.makeText(this,"Image is not right proportionate", Toast.LENGTH_LONG).show();
             ShowExif(exif);
         }
